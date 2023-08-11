@@ -1,0 +1,62 @@
+<?php
+
+use App\Http\Controllers\Admin\CartController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Client\ClientHomeController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/create-user', [UserController::class, 'create'])->name('create.user');
+    Route::post('/store-user', [UserController::class, 'store'])->name('store.user');
+    Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('edit.user');
+    Route::put('/update-user/{id}', [UserController::class, 'update'])->name('update.user');
+    Route::get('/delete-user/{id}', [UserController::class, 'create'])->name('delete.user');
+
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/create-category', [CategoryController::class, 'create'])->name('create.category');
+    Route::post('/store-category', [CategoryController::class, 'store'])->name('store.category');
+    Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])->name('edit.category');
+    Route::put('/update-category/{id}', [CategoryController::class, 'update'])->name('update.category');
+    Route::get('/delete-category/{id}', [CategoryController::class, 'delete'])->name('delete.category');
+
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    Route::get('/create-product', [ProductController::class, 'create'])->name('create.product');
+    Route::post('/store-product', [ProductController::class, 'store'])->name('store.product');
+    Route::get('/edit-product/{id}', [ProductController::class, 'edit'])->name('edit.product');
+    Route::put('/update-product/{id}', [ProductController::class, 'update'])->name('update.product');
+    Route::get('/delete-product/{id}', [ProductController::class, 'delete'])->name('delete.product');
+
+    Route::get('/product-image', [ProductImageController::class, 'index'])->name('product-image');
+    Route::get('/create-product-image', [ProductImageController::class, 'create'])->name('create.product-image');
+    Route::post('/store-product-image', [ProductImageController::class, 'store'])->name('store.product-image');
+    Route::get('/edit-product-image/{id}', [ProductImageController::class, 'edit'])->name('edit.product-image');
+    Route::put('/update-product-image/{id}', [ProductImageController::class, 'update'])->name('update.product-image');
+    Route::get('/delete-product-image/{id}', [ProductImageController::class, 'delete'])->name('delete.product-image');
+
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/create-contact', [ContactController::class, 'create'])->name('create.contact');
+    Route::post('/store-contact', [ContactController::class, 'store'])->name('store.contact');
+    Route::get('/edit-contact/{id}', [ContactController::class, 'edit'])->name('edit.contact');
+    Route::put('/update-contact/{id}', [ContactController::class, 'update'])->name('update.contact');
+    Route::get('/delete-contact/{id}', [ContactController::class, 'delete'])->name('delete.contact');
+
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+});
+
+    Route::get('/', [ClientHomeController::class, 'index'])->name('/');
