@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Client\ClientHomeController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\ProductDetailController;
+use App\Http\Controllers\Client\ShopController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -56,7 +58,12 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::put('/update-contact/{id}', [ContactController::class, 'update'])->name('update.contact');
     Route::get('/delete-contact/{id}', [ContactController::class, 'delete'])->name('delete.contact');
 
-    Route::get('/cart', [CartController::class, 'index'])->name('cart');
 });
 
-    Route::get('/', [ClientHomeController::class, 'index'])->name('/');
+Route::get('/', [HomeController::class, 'index'])->name('/');
+
+Route::post('cart/{id}', [ProductDetailController::class, 'addToCart'])->name('add-to-cart');
+
+Route::get('shop', [ShopController::class, 'index'])->name('shop');
+
+Route::get('product-detail/{id}', [ProductDetailController::class, 'index'])->name('product.detail');

@@ -26,7 +26,7 @@ class ContactController extends Controller
         return view('admin.contact.create');
     }
 
-    public function store( ContactRequest $request): RedirectResponse
+    public function store(ContactRequest $request): RedirectResponse
     {
         $contact = $request->validated();
 
@@ -37,7 +37,7 @@ class ContactController extends Controller
             'phone' => $contact['phone'],
         ]);
 
-        toast('Thêm Liên Hệ Thành Công','success');
+        toast('Thêm Liên Hệ Thành Công', 'success');
 
         return redirect('contact');
     }
@@ -62,7 +62,7 @@ class ContactController extends Controller
             'phone' => $data['phone'],
         ]);
 
-        toast('Update new banner success','success');
+        toast('Update new banner success', 'success');
 
         return redirect('contact');
     }
@@ -73,7 +73,7 @@ class ContactController extends Controller
 
         $contact->delete();
 
-        toast('Đã xóa liên hệ','success');
+        toast('Đã xóa liên hệ', 'success');
 
         return redirect('contact');
     }

@@ -72,7 +72,7 @@
                                 </div>
 
                             </div>
-                            <button type="submit" class="btn btn-primary">Cập Nhật Danh Mục</button>
+                            <button type="submit" class="btn btn-primary">Cập Nhật</button>
                         </div>
                     </div>
                 </form>

@@ -41,7 +41,7 @@ class CategoryController extends Controller
             'featured' => $data['featured'],
         ]);
 
-        toast('Create New Category Success','success');
+        toast('Create New Category Success', 'success');
 
         return redirect('category');
     }
@@ -75,7 +75,7 @@ class CategoryController extends Controller
             'featured' => $data['featured'],
         ]);
 
-        toast('Cập nhật thành công','success');
+        toast('Cập nhật thành công', 'success');
 
         return redirect('category');
     }
@@ -90,7 +90,7 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        toast('Đã xóa danh mục','success');
+        toast('Đã xóa danh mục', 'success');
 
         return redirect('category')->with('status', 'Xóa danh mục thành công!');
     }
