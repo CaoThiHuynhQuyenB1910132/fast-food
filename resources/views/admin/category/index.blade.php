@@ -40,7 +40,7 @@
                                             @if($category->featured === 1)
                                                 <td><span class="badge badge-success">Nổi bật</span></td>
                                             @else
-                                                <td><span span class="badge badge-danger">Không nổi bật</span></td>
+                                                <td><span class="badge badge-danger">Không nổi bật</span></td>
                                             @endif
 
                                             <td class="text-right">

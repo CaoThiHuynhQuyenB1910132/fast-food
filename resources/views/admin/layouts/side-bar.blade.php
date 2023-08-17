@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="{{ request()->routeIs('cart') ? 'active' : '' }}">
-                    <a href="{{ route('cart') }}">
+                    <a href="">
                         <i class="fas fa-sd-card"></i>
                         <span> Giỏ hàng </span>
                     </a>

@@ -40,12 +40,12 @@ class ProductImageController extends Controller
             $data['image'] = $this->uploadImage($request, 'image', 'images');
         }
 
-        ProductImage::query()->create([
+        ProductImage::create([
             'image' => $data['image'],
             'product_id' =>$data['product_id'],
         ]);
 
-        toast('Create new image success','success');
+        toast('Create new image success', 'success');
 
         return redirect('product-image');
     }
@@ -80,7 +80,7 @@ class ProductImageController extends Controller
             'product_id' => $data['product_id'],
         ]);
 
-        toast('Update new image success','success');
+        toast('Update new image success', 'success');
 
         return redirect('product-image');
     }
@@ -95,7 +95,7 @@ class ProductImageController extends Controller
 
         $product_image->delete();
 
-        toast('Delete banner success','success');
+        toast('Delete banner success', 'success');
 
         return redirect('product-image');
     }

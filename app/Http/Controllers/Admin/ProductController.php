@@ -33,7 +33,7 @@ class ProductController extends Controller
     {
         $product = $request->validated();
 
-        Product::query()->create([
+        Product::create([
             'name' => $product['name'],
             'description' => $product['description'],
             'status' => $product['status'],
@@ -75,7 +75,7 @@ class ProductController extends Controller
             'category_id' => $data['category_id'],
         ]);
 
-        toast('Cập nhật sản phẩm thành công','success');
+        toast('Cập nhật sản phẩm thành công', 'success');
 
         return redirect('product');
     }
@@ -86,7 +86,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        toast('Xóa sản phẩm thành công','success');
+        toast('Xóa sản phẩm thành công', 'success');
 
         return redirect('product')->with('status', 'Xóa sản phẩm thành công!');
     }

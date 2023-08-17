@@ -1,173 +1,198 @@
+<div class="hero_area">
+<div class="bg-box">
+    <img src="client/assets/images/hero-bg.jpg" alt="">
+</div>
+<header class="header_section">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="{{route('/')}}">
+                        <span>
+                            King Food
+                        </span>
+            </a>
 
-    <div class="container-menu-desktop">
-        <div class="wrap-menu-desktop">
-            <nav class="limiter-menu-desktop">
-                <div class="left-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+            </button>
 
-                    <div class="menu-desktop">
-                        <ul class="main-menu">
-                            <li class="active-menu">
-                                <a href="index.html">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Homepage 1</a></li>
-                                    <li><a href="home-02.html">Homepage 2</a></li>
-                                    <li><a href="home-03.html">Homepage 3</a></li>
-                                    <li><a href="home-04.html">Homepage 4</a></li>
-                                    <li><a href="home-05.html">Homepage 5</a></li>
-                                    <li><a href="home-06.html">Homepage 6</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Page</a>
-                                <ul class="sub-menu">
-                                    <li><a href="about-01.html">About 1</a></li>
-                                    <li><a href="about-02.html">About 2</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                    <li><a href="error.html">404 Error</a></li>
-                                    <li><a href="checkout.html">CheckOut</a></li>
-                                    <li><a href="account.html">My Account</a></li>
-                                    <li><a href="account-lost-pass.html">My Account Lost Pass</a></li>
-                                    <li><a href="account-register.html">My Account Register</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="shop-sidebar-grid.html">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop-sidebar-grid.html">Shop Sidebar Grid</a></li>
-                                    <li><a href="shop-sidebar-list.html">Shop Sidebar List</a></li>
-                                    <li><a href="shop-product-grid.html">Shop Product Grid</a></li>
-                                    <li><a href="shop-product-list.html">Shop Product List</a></li>
-                                    <li><a href="product-single.html">Product Single</a></li>
-                                    <li><a href="shop-cart.html">Shop Cart</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog-list.html">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-grid-01.html">Blog Grid 1</a></li>
-                                    <li><a href="blog-grid-02.html">Blog Grid 2</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="gallery-01.html">Gallery</a>
-                                <ul class="sub-menu">
-                                    <li><a href="gallery-01.html">Gallery 1</a></li>
-                                    <li><a href="gallery-02.html">Gallery 2</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="contact-01.html">Contact</a>
-                                <ul class="sub-menu">
-                                    <li><a href="contact-01.html">Contact 1</a></li>
-                                    <li><a href="contact-02.html">Contact 2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="center-header">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mx-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('/')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('shop')}}">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="book.html">Book Table</a>
+                    </li>
+                </ul>
+                <div class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
+                <div class="user_option">
 
-                    <div class="logo">
-                        <a href="index.html"><img src="client/assets/images/icons/logo-01.png" alt="IMG-LOGO"></a>
-                    </div>
-                </div>
-                <div class="right-header">
+                    <a href="" class="user_link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
 
-                    <div class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
-                        <div class="h-full flex-m">
-                            <div class="icon-header-item flex-c-m trans-04 js-show-modal-search">
-                                <img src="client/assets/images/icons/icon-search.png" alt="SEARCH">
-                            </div>
-                        </div>
+                    <div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
                         <div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
                             <div class="icon-header-item flex-c-m trans-04 icon-header-noti" data-notify="2">
-                                <img src="client/assets/images/icons/icon-cart-2.png" alt="CART">
+                                <img src="client/new/images/icons/icon-cart.png" alt="CART">
                             </div>
                             <div class="cart-header menu-click-child trans-04">
                                 <div class="bo-b-1 bocl15">
                                     <div class="size-h-2 js-pscroll m-r--15 p-r-15">
-
                                         <div class="flex-w flex-str m-b-25">
-                                            <div class="size-w-15 flex-w flex-t">
-                                                <a href="product-single.html"
-                                                   class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
-                                                    <img src="client/assets/images/item-cart-01.jpg" alt="PRODUCT">
-                                                </a>
-                                                <div class="size-w-17 flex-col-l">
+                                                <div class="size-w-15 flex-w flex-t">
                                                     <a href="product-single.html"
-                                                       class="txt-s-108 cl3 hov-cl10 trans-04">
-                                                        Cheery
+                                                       class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
+                                                        <img src="images/item-cart-01.jpg" alt="PRODUCT">
                                                     </a>
-                                                    <span class="txt-s-101 cl9">
+                                                    <div class="size-w-17 flex-col-l">
+                                                        <a href="product-single.html"
+                                                           class="txt-s-108 cl3 hov-cl10 trans-04">
+                                                        </a>
+                                                        <span class="txt-s-101 cl9">
                                                             18$
                                                         </span>
-                                                    <span class="txt-s-109 cl12">
+                                                        <span class="txt-s-109 cl12">
                                                             x2
                                                         </span>
+                                                    </div>
+                                                </div>
+                                                <div class="size-w-14 flex-b">
+                                                    <button class="lh-10">
+                                                        <img src="images/icons/icon-close.png" alt="CLOSE">
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="size-w-14 flex-b">
-                                                <button class="lh-10">
-                                                    <img src="client/assets/images/icons/icon-close.png" alt="CLOSE">
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex-w flex-str m-b-25">
-                                            <div class="size-w-15 flex-w flex-t">
-                                                <a href="product-single.html"
-                                                   class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
-                                                    <img src="client/assets/images/item-cart-02.jpg" alt="PRODUCT">
-                                                </a>
-                                                <div class="size-w-17 flex-col-l">
-                                                    <a href="product-single.html"
-                                                       class="txt-s-108 cl3 hov-cl10 trans-04">
-                                                        Asparagus
-                                                    </a>
-                                                    <span class="txt-s-101 cl9">
-                                                            12$
-                                                        </span>
-                                                    <span class="txt-s-109 cl12">
-                                                            x1
-                                                        </span>
-                                                </div>
-                                            </div>
-                                            <div class="size-w-14 flex-b">
-                                                <button class="lh-10">
-                                                    <img src="client/assets/images/icons/icon-close.png" alt="CLOSE">
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="flex-w flex-sb-m p-t-22 p-b-12">
-                                        <span class="txt-m-103 cl3 p-r-20">
-                                            Subtotal
-                                        </span>
+                                    <span class="txt-m-103 cl3 p-r-20">
+                                        Subtotal
+                                    </span>
                                     <span class="txt-m-111 cl6">
-                                            48$
-                                        </span>
+                                        48$
+                                    </span>
                                 </div>
                                 <div class="flex-w flex-sb-m p-b-31">
-                                        <span class="txt-m-103 cl3 p-r-20">
-                                            Total
-                                        </span>
+                                    <span class="txt-m-103 cl3 p-r-20">
+                                        Total
+                                    </span>
                                     <span class="txt-m-111 cl10">
-                                            48$
-                                        </span>
+                                        48$
+                                    </span>
                                 </div>
-                                <a href="checkout.html"
-                                   class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
-                                    check out
-                                </a>
+                                    <a href="checkout.html"
+                                       class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
+                                        check out
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+
+                    <form class="form-inline">
+                        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <a href="" class="order_online">
+                        Order Now
+                    </a>
+
+                </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="slider_section ">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                            <div class="detail-box">
+                                <h1>
+                                    Fast Food Restaurant
+                                </h1>
+                                <p>
+                                    Ngonnn
+                                </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Order Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
+            <div class="carousel-item ">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                            <div class="detail-box">
+                                <h1>
+                                    Fast Food Restaurant
+                                </h1>
+                                <p>
+                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad
+                                    mollitia laborum quam quisquam esse error unde. Tempora ex doloremque,
+                                    labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Order Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                            <div class="detail-box">
+                                <h1>
+                                    Fast Food Restaurant
+                                </h1>
+                                <p>
+                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad
+                                    mollitia laborum quam quisquam esse error unde. Tempora ex doloremque,
+                                    labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Order Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <ol class="carousel-indicators">
+                <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#customCarousel1" data-slide-to="1"></li>
+                <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
         </div>
     </div>
+
+</section>
+</div>
 
