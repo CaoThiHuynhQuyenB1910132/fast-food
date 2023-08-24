@@ -62,8 +62,12 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
 
-Route::post('cart/{id}', [ProductDetailController::class, 'addToCart'])->name('add-to-cart');
-
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
+Route::get('shop-add/{id}', [ShopController::class, 'add'])->name('shop.add');
 
 Route::get('product-detail/{id}', [ProductDetailController::class, 'index'])->name('product.detail');
+
+Route::get('cart-detail', [CartController::class, 'index'])->name('cart.detail');
+Route::post('cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::put('cart-update', [CartController::class, 'update'])->name('cart.update');
+Route::get('cart-delete/{id}', [CartController::class, 'delete'])->name('cart.delete');

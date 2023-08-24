@@ -8,13 +8,14 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Site Metas -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="client/assets/images/favicon.png" type="">
 
     <title> Feane </title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="client/assets/css/bootstrap.css"/>
 
