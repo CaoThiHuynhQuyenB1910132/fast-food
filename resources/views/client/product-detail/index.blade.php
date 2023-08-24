@@ -58,7 +58,7 @@
                         <p class="txt-s-101 cl6">
                             {{$product->description}}
                         </p>
-                        <form action="{{ route('add-to-cart', ['id' => $product->id]) }}" method="POST" id="addcart">
+                        <form action="{{ route('add.to.cart', ['id' => $product->id]) }}" method="POST" id="addcart">
                             @csrf
                             <div class="flex-w flex-m p-t-55 p-b-30">
                                 <div class="wrap-num-product flex-w flex-m bg12 p-rl-10 m-r-30 m-b-30">
@@ -67,7 +67,7 @@
                                            value="1" readonly>
                                     <div onclick="incQuantity" value="+" class="btn-num-product-up flex-c-m fs-16"></div>
                                 </div>
-                                <a href="{{ route('add-to-cart', ['id' => $product->id])}}" onclick="event.preventDefault(); document.getElementById('addcart').submit();" class="btn flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 m-b-30 js-addcart1" >
+                                <a href="{{ route('add.to.cart', ['id' => $product->id])}}" onclick="event.preventDefault(); document.getElementById('addcart').submit();" class="btn flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 m-b-30 js-addcart1" >
                                     Add to cart
                                 </a>
 
