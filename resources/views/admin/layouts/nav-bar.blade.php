@@ -75,13 +75,21 @@
                 <div class="user-header">
                     <div class="avatar avatar-sm"> <img src="admin/assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle"> </div>
                     <div class="user-text">
-                        <h6>Soeng Souy</h6>
+                        <h6>{{ Auth::user()->name }}</h6>
                         <p class="text-muted mb-0">Administrator</p>
                     </div>
                 </div>
-                <a class="dropdown-item" href="profile.html">My Profile</a>
+                <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
                 <a class="dropdown-item" href="settings.html">Account Settings</a>
-                <a class="dropdown-item" href="{{route('login')}}">Logout</a> </div>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </a>
+            </div>
         </li>
     </ul>
     <div class="top-nav-search">

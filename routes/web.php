@@ -5,20 +5,20 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\MyAccountController;
 use App\Http\Controllers\Client\ProductDetailController;
 use App\Http\Controllers\Client\ShopController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('/');
 
 Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -28,7 +28,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::post('/store-user', [UserController::class, 'store'])->name('store.user');
     Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('edit.user');
     Route::put('/update-user/{id}', [UserController::class, 'update'])->name('update.user');
-    Route::get('/delete-user/{id}', [UserController::class, 'create'])->name('delete.user');
+    Route::get('/delete-user/{id}', [UserController::class, 'delete'])->name('delete.user');
+
+    Route::get('profile', [ProfileController::class,'index'])->name('profile');
 
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
     Route::get('/create-category', [CategoryController::class, 'create'])->name('create.category');
@@ -62,8 +64,13 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
 
-Route::post('cart/{id}', [ProductDetailController::class, 'addToCart'])->name('add-to-cart');
-
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
 
 Route::get('product-detail/{id}', [ProductDetailController::class, 'index'])->name('product.detail');
+
+Route::get('cart-detail', [CartController::class, 'index'])->name('cart.detail')->middleware('auth');
+Route::post('cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart')->middleware('auth');
+Route::put('cart-update', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
+Route::get('cart-delete/{id}', [CartController::class, 'delete'])->name('cart.delete')->middleware('auth');
+
+Route::get('account', [MyAccountController::class, 'index'])->name('account')->middleware('auth');

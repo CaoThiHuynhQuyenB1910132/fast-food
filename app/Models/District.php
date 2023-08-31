@@ -17,16 +17,16 @@ class District extends Model
 
     public function province(): BelongsTo
     {
-        return $this->belongsTo(Province::class, 'provinceId');
+        return $this->belongsTo(Province::class);
     }
 
     public function wards(): HasMany
     {
-        return $this->hasMany(Ward::class, 'districtId');
+        return $this->hasMany(Ward::class);
     }
 
     public function addresses(): HasMany
     {
-        return $this->hasMany(Address::class, 'districtId');
+        return $this->hasMany(Address::class);
     }
 }

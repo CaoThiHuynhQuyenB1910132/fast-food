@@ -52,17 +52,17 @@ class User extends Authenticatable
 
     public function carts(): HasMany
     {
-        return $this->hasMany(Cart::class, 'userId');
+        return $this->hasMany(Cart::class, 'user_id');
     }
 
     public function addresses(): HasMany
     {
-        return $this->hasMany(Address::class, 'userId');
+        return $this->hasMany(Address::class, 'user_id');
     }
 
     public function orders(): HasMany
     {
-        return $this->hasMany(Order::class, 'userId');
+        return $this->hasMany(Order::class, 'user_id');
     }
 
     public function wishlists(): HasMany
