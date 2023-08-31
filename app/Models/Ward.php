@@ -17,11 +17,11 @@ class Ward extends Model
 
     public function district(): BelongsTo
     {
-        return $this->belongsTo(District::class, 'districtId');
+        return $this->belongsTo(District::class, );
     }
 
     public function addresses(): HasMany
     {
-        return $this->hasMany(Address::class, 'wardId');
+        return $this->hasMany(Address::class, );
     }
 }

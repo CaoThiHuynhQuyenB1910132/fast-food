@@ -13,6 +13,7 @@ class Address extends Model
         'name',
         'email',
         'house_number',
+        'phone',
         'user_id',
         'district_id',
         'province_id',
@@ -31,7 +32,7 @@ class Address extends Model
 
     public function ward(): BelongsTo
     {
-        return $this->belongsTo(Ward::class);
+        return $this->belongsTo(Ward::class, 'ward_id');
     }
 
     public function user(): BelongsTo

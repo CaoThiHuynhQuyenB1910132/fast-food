@@ -85,9 +85,9 @@
                     </span>
                 </div>
 
-                <button class="flex-c-m txt-s-105 cl0 bg10 size-a-34 hov-btn2 trans-04 p-rl-10 m-t-43">
+                <a href="{{ route('checkout') }}" class="flex-c-m txt-s-105 cl0 bg10 size-a-34 hov-btn2 trans-04 p-rl-10 m-t-43 w-25" >
                     proceed to checkout
-                </button>
+                </a>
 
                 <div class="flex-w flex-sb-m p-t-20">
                     <div class="flex-w flex-m m-r-50 m-tb-10">
@@ -107,11 +107,14 @@
             @endif
         </div>
     </div>
+@endsection
 
+@section('scripts')
     <script type="text/javascript">
         $('.increase').on('click', function(e) {
             e.preventDefault()
             let id = $(this).data('inc-product-id');
+            console.log(id)
 
             $.ajax({
                 url: '{{ route('cart.update') }}',
@@ -156,5 +159,4 @@
             })
         });
     </script>
-
 @endsection

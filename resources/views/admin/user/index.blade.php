@@ -92,7 +92,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="{{route('edit.user', ['id' => $user->id])}}">
                                                             <i class="fas fa-pencil-alt m-r-5"></i> Edit</a>
-                                                        <a class="dropdown-item" href="{{route('delete.user', ['id' => $user->id])}}" data-toggle="modal" data-target="#delete_asset">
+                                                        <a class="dropdown-item" href="{{route('delete.user', ['id' => $user->id])}}" >
                                                             <i class="fas fa-trash-alt m-r-5"></i> Delete
                                                         </a>
                                                     </div>

@@ -15,13 +15,11 @@ class CartController extends Controller
 {
     public function index(): View
     {
-        $products = Product::all();
-        if (Auth::check()){
-            $carts = Cart::where('user_id', Auth::user()->id)->get();
-            return view('client.cart.index', compact('products', 'carts'));
-        }
-        return view('client.cart.index', compact('products'));
+        $carts = Cart::where('user_id', Auth::user()->id)->get();
 
+        return view('client.cart.index', [
+            'carts' => $carts
+        ]);
     }
 
     public function addToCart(Request $request, int $productId): RedirectResponse
@@ -29,11 +27,6 @@ class CartController extends Controller
         $data = $request->validate([
             'quantity' => ['required', 'integer', 'min:1'],
         ]);
-
-        if (! Auth::check()) {
-            toast('Đăng nhập trước khi sử dụng dịch vụ', 'warning');
-            return redirect('login');
-        }
 
         $checkProductExits = Cart::where('user_id', Auth::id())
             ->where('product_id', $productId)
